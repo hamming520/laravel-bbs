@@ -20,7 +20,7 @@ class RepliesController extends Controller
         $reply->user_id = Auth::id();
         $reply->save();
 
-		return redirect()->to($reply->topic->link())->with('success', '创建成功!');
+		return redirect()->to($reply->topic->link())->with('success', '评论创建成功!');
 	}
 
 	public function destroy(Reply $reply)
@@ -28,6 +28,6 @@ class RepliesController extends Controller
 		$this->authorize('destroy', $reply);
 		$reply->delete();
 
-		return redirect()->route('replies.index')->with('success', '删除成功!');
+		return redirect()->to($reply->topic->link())->with('success', '评论删除成功!');
 	}
 }
