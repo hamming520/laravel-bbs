@@ -26,6 +26,8 @@ class ReplyObserver
 
     public function deleted(Reply $reply)
     {
-        $reply->topic->decrement('reply_count');
+        if ($reply->topic->reply_count > 0) {
+            $reply->topic->decrement('reply_count');
+        }
     }
 }
