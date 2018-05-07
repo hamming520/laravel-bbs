@@ -52,8 +52,13 @@ class UsersTableSeeder extends Seeder
         // 初始化用户角色，将 1 号用户指派为『站长』
         $user->assignRole('Founder');
 
-        // 将 2 号用户指派为『管理员』
+        // 单独处理第二个用户的数据
         $user = User::find(2);
+        $user->name = 'Qifeng';
+        $user->email = 'achais@126.com';
+        $user->save();
+
+        // 将 2 号用户指派为『管理员』
         $user->assignRole('Maintainer');
     }
 }
