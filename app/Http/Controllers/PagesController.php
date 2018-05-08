@@ -10,4 +10,9 @@ class PagesController extends Controller
     {
         return redirect()->route('topics.index');
     }
+
+    public function test()
+    {
+
+    }
 }
