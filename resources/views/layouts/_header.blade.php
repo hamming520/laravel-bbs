@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                小论坛
+                {{ setting('site_name', 'Little Tech') }}
             </a>
         </div>
 
