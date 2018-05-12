@@ -14,7 +14,7 @@ class VerificationCodeRequest extends FormRequest
     public function rules()
     {
         return [
-            'phone' => 'required|regex:/^1[34578]\d{9}$/|unique:users',
+            'phone' => 'required|regex:/^1\d{10}$/|unique:users',
         ];
     }
 }
