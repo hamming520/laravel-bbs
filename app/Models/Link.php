@@ -7,11 +7,23 @@ use Cache;
 
 class Link extends Model
 {
-    protected $fillable = ['title', 'link'];
+    protected $fillable = ['title', 'link', 'icon'];
 
     public $cache_key = 'larabbs_links';
 
     protected $cache_expire_in_minutes = 1440;
+
+    public function setIconAttribute($path)
+    {
+        // 如果不是 `http` 子串开头，那就是从后台上传的，需要补全 URL
+        if (!empty($path) && !starts_with($path, 'http')) {
+
+            // 拼接完整的 URL
+            $path = config('app.url') . "/uploads/images/icons/$path";
+        }
+
+        $this->attributes['icon'] = $path;
+    }
 
     public function getAllCached()
     {
