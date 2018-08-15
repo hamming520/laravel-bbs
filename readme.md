@@ -70,12 +70,11 @@ databases:
 3). 应用修改
 
 修改完成后保存，然后执行以下命令应用配置信息修改：
+随后请运行 `homestead reload` 进行重启。
 
 ```shell
-homestead provision
+vagrant reload --provision
 ```
-
-随后请运行 `homestead reload` 进行重启。
 
 #### 3. 安装扩展包依赖
 

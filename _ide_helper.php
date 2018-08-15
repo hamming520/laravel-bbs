@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.40 on 2018-05-12 13:29:11.
+ * Generated for Laravel 5.5.40 on 2018-08-15 16:07:12.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -2943,19 +2943,6 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Get a lock instance.
-         *
-         * @param string $name
-         * @param int $seconds
-         * @return \Illuminate\Contracts\Cache\Lock 
-         * @static 
-         */ 
-        public static function lock($name, $seconds = 0)
-        {
-            return \Illuminate\Cache\RedisStore::lock($name, $seconds);
-        }
-        
-        /**
          * Remove all items from the cache.
          *
          * @return bool 
@@ -2963,41 +2950,29 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flush()
         {
-            return \Illuminate\Cache\RedisStore::flush();
+            return \Illuminate\Cache\FileStore::flush();
         }
         
         /**
-         * Get the Redis connection instance.
+         * Get the Filesystem instance.
          *
-         * @return \Predis\ClientInterface 
+         * @return \Illuminate\Filesystem\Filesystem 
          * @static 
          */ 
-        public static function connection()
+        public static function getFilesystem()
         {
-            return \Illuminate\Cache\RedisStore::connection();
+            return \Illuminate\Cache\FileStore::getFilesystem();
         }
         
         /**
-         * Set the connection name to be used.
+         * Get the working directory of the cache.
          *
-         * @param string $connection
-         * @return void 
+         * @return string 
          * @static 
          */ 
-        public static function setConnection($connection)
+        public static function getDirectory()
         {
-            \Illuminate\Cache\RedisStore::setConnection($connection);
-        }
-        
-        /**
-         * Get the Redis database instance.
-         *
-         * @return \Illuminate\Contracts\Redis\Factory 
-         * @static 
-         */ 
-        public static function getRedis()
-        {
-            return \Illuminate\Cache\RedisStore::getRedis();
+            return \Illuminate\Cache\FileStore::getDirectory();
         }
         
         /**
@@ -3008,19 +2983,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getPrefix()
         {
-            return \Illuminate\Cache\RedisStore::getPrefix();
-        }
-        
-        /**
-         * Set the cache key prefix.
-         *
-         * @param string $prefix
-         * @return void 
-         * @static 
-         */ 
-        public static function setPrefix($prefix)
-        {
-            \Illuminate\Cache\RedisStore::setPrefix($prefix);
+            return \Illuminate\Cache\FileStore::getPrefix();
         }
          
     }
@@ -12355,6 +12318,110 @@ namespace Illuminate\Support\Facades {
  
 }
 
+namespace Overtrue\LaravelSocialite { 
+
+    class Socialite {
+        
+        /**
+         * Set config instance.
+         *
+         * @param \Overtrue\Socialite\Config $config
+         * @return $this 
+         * @static 
+         */ 
+        public static function config($config)
+        {
+            return \Overtrue\Socialite\SocialiteManager::config($config);
+        }
+        
+        /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return \Overtrue\Socialite\ProviderInterface 
+         * @static 
+         */ 
+        public static function driver($driver)
+        {
+            return \Overtrue\Socialite\SocialiteManager::driver($driver);
+        }
+        
+        /**
+         * 
+         *
+         * @param \Symfony\Component\HttpFoundation\Request $request
+         * @return $this 
+         * @static 
+         */ 
+        public static function setRequest($request)
+        {
+            return \Overtrue\Socialite\SocialiteManager::setRequest($request);
+        }
+        
+        /**
+         * 
+         *
+         * @return \Symfony\Component\HttpFoundation\Request 
+         * @static 
+         */ 
+        public static function getRequest()
+        {
+            return \Overtrue\Socialite\SocialiteManager::getRequest();
+        }
+        
+        /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param \Closure $callback
+         * @return $this 
+         * @static 
+         */ 
+        public static function extend($driver, $callback)
+        {
+            return \Overtrue\Socialite\SocialiteManager::extend($driver, $callback);
+        }
+        
+        /**
+         * Get all of the created "drivers".
+         *
+         * @return \Overtrue\Socialite\ProviderInterface[] 
+         * @static 
+         */ 
+        public static function getDrivers()
+        {
+            return \Overtrue\Socialite\SocialiteManager::getDrivers();
+        }
+        
+        /**
+         * Build an OAuth 2 provider instance.
+         *
+         * @param string $provider
+         * @param array $config
+         * @return \Overtrue\Socialite\ProviderInterface 
+         * @static 
+         */ 
+        public static function buildProvider($provider, $config)
+        {
+            return \Overtrue\Socialite\SocialiteManager::buildProvider($provider, $config);
+        }
+        
+        /**
+         * Format the server configuration.
+         *
+         * @param array $config
+         * @return array 
+         * @static 
+         */ 
+        public static function formatConfig($config)
+        {
+            return \Overtrue\Socialite\SocialiteManager::formatConfig($config);
+        }
+         
+    }
+ 
+}
+
 namespace Barryvdh\Debugbar { 
 
     class Facade {
@@ -15706,6 +15773,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class Socialite extends \Overtrue\LaravelSocialite\Socialite {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
