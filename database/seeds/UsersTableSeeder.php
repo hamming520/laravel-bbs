@@ -17,12 +17,7 @@ class UsersTableSeeder extends Seeder
 
         // 头像假数据
         $avatars = [
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/Lhd1SHqu86.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/NDnzMutoxX.png?imageView2/1/w/200/h/200',
+            'https://b-ssl.duitang.com/uploads/item/201810/20/20181020164832_j5MQ2.thumb.700_0.jpeg'
         ];
 
         // 生成数据集合
@@ -46,7 +41,7 @@ class UsersTableSeeder extends Seeder
         $user = User::find(1);
         $user->name = 'Achais';
         $user->email = 'achais.zheng@gmail.com';
-        $user->avatar = 'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200';
+        $user->avatar = 'https://b-ssl.duitang.com/uploads/item/201810/20/20181020164832_j5MQ2.thumb.700_0.jpeg';
         $user->save();
 
         // 初始化用户角色，将 1 号用户指派为『站长』
