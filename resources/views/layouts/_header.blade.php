@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ setting('site_name', 'Little Tech') }}
+                {{ setting('site_name', 'LaraBBS') }}
             </a>
         </div>
 
