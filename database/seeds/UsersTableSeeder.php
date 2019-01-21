@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
 
         // 头像假数据
         $avatars = [
-            'https://b-ssl.duitang.com/uploads/item/201810/20/20181020164832_j5MQ2.thumb.700_0.jpeg'
+            '/images/default-avatar.jpeg'
         ];
 
         // 生成数据集合
@@ -41,7 +41,7 @@ class UsersTableSeeder extends Seeder
         $user = User::find(1);
         $user->name = 'Achais';
         $user->email = 'achais.zheng@gmail.com';
-        $user->avatar = 'https://b-ssl.duitang.com/uploads/item/201810/20/20181020164832_j5MQ2.thumb.700_0.jpeg';
+        $user->avatar = '/images/default-avatar.jpeg';
         $user->save();
 
         // 初始化用户角色，将 1 号用户指派为『站长』
