@@ -11,8 +11,8 @@ class LinkObserver
     {
         // 这样写扩展性更高，只有空的时候才指定默认icon
         if (empty($link->icon)) {
-        $link->icon = config('app.url') . '/images/default-avatar.jpeg';
-    }
+            $link->icon = config('app.url') . '/images/default-avatar.jpeg';
+        }
     }
 
     // 在保存时清空 cache_key 对应的缓存
