@@ -167,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Overtrue\LaravelSocialite\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -178,7 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\EasySmsServiceProvider::class,
-        Overtrue\LaravelSocialite\ServiceProvider::class,
+        App\Providers\JpushServiceProvider::class,
 
     ],
 
